@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>#4471 · two problems, not one · support kb</title>
+<style>:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#6b6a66;--line:#e3e0d8;--accent:#2f6f5e;--warn:#b4501f;--warn-bg:#fbeee6;--note-bg:#eef5f2;--mono:ui-monospace,'Cascadia Code',Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#171716;--fg:#ecebe6;--muted:#9c9a93;--line:#34332f;--accent:#6fbfa6;--warn:#f0905d;--warn-bg:#3a2418;--note-bg:#1d2c27}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem}th,td{border-bottom:1px solid var(--line);padding:.35rem .5rem;text-align:left}code{font-family:var(--mono);font-size:.88em}a{color:var(--accent)}
+.kb{max-width:760px;margin:0 auto;padding:2rem 16px 4rem}.crumb{font:.8rem var(--mono);text-decoration:none;color:var(--muted)}h1{margin:.25rem 0 .5rem;line-height:1.2}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem 1rem;color:var(--muted);font-size:.85rem;margin:0}.status{border:1px solid var(--line);border-radius:99px;padding:0 .6rem}
+aside{border-left:4px solid var(--warn);padding:.5rem 1rem;margin:1rem 0;background:var(--warn-bg)}
+.sum{font-size:1.1rem}.tags,.note{color:var(--muted);font-size:.85em}.wrong td{background:var(--warn-bg)}.wrong td:last-child{color:var(--warn);font-weight:600}
+.stamp{margin:2rem 0 0;font:.85rem var(--mono);color:var(--muted)}.stamp b{color:var(--accent);letter-spacing:.04em}
+footer{margin-top:3rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line);padding-top:1rem}</style></head><body><div class="kb">
+<header><a class="crumb" href="#">support desk · kb</a><h1>#4471 · two problems, not one</h1>
+<p class="meta"><span>owner <b>ArtiomKuzmenok</b></span><span class="status known">known</span><span>reviewed 2026-11-11 · 0 days ago</span></p></header>
+<main>
+<p><a href="#">#4471</a> merged 412 reports about wrong dates into one issue. Read by cause, they are two different bugs with two different fixes. Fixing the parser alone leaves the second one open.</p>
+<aside>The merge followed <a href="#">decision 0001</a>: same subject, same issue. Subject says nothing about cause, and the intake tag is only a browser guess.</aside>
+<h2>What is in it</h2>
+<p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
+<table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody>
+<tr><td><code>parser</code></td><td>379</td><td class="tags">parser ×356 · hint ×23</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td>#4471</td></tr>
+<tr class="wrong"><td><code>hint</code></td><td>33</td><td class="tags">hint ×18 · parser ×15</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td>not this ticket — no ticket of its own</td></tr>
+</tbody></table>
+<p class="note">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
+<p>The export has 427 rows. 15 are repeats of the same report id, so the count is 412.</p>
+<h2>The two problems</h2>
+<ol><li><strong>Parser reads dates month first: 379 reports</strong> at 11 day-first tenants, April to October. Ticket: <a href="https://github.com/ArtiomKuzmenok/megadev-training/issues/1">issue 1</a>. Five of them (R-41202, R-41209, R-41236, R-41344, R-41620) read as one-day moves. The kb counts them where they are filed; they may be a separate timezone problem, to check after the fix.</li>
+<li><strong>booking-v3 form hint says MM/DD/YYYY: 33 reports</strong> from <code>form</code> at copper.studio, alder.physio and pale.harbour. People type month first because the form tells them to. Ticket: <a href="https://github.com/ArtiomKuzmenok/megadev-training/issues/2">issue 2</a>.</li></ol>
+<h2>Lessons</h2><ul><li>Count by cause, not by subject. 15 of the 33 hint reports were tagged <code>parser</code> at intake.</li><li>A ticket marked known is a claim. Re-read it against the data before you rely on it.</li></ul>
+<p class="stamp">desk ref <b>DR-BXA0-83C1</b></p>
+</main><footer>Pages are written by people. Tables and charts are built from data at render time.</footer></div></body></html>
