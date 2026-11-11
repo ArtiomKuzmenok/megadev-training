@@ -1,0 +1,46 @@
+---
+layout: runbook
+title: '#4471 · two problems, not one'
+owner: ArtiomKuzmenok
+status: known
+reviewed: 2026-11-11
+signature: ArtiomKuzmenok
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  const signature = 'ArtiomKuzmenok';
+</script>
+
+[#4471](/kb/incidents/4471) merged 412 reports about wrong dates into one issue. Read by cause, they
+are two different bugs with two different fixes. Fixing the parser alone leaves the second one open.
+
+<Callout kind="warn">
+The merge followed [decision 0001](/kb/decisions/0001-dedupe-by-subject): same subject, same issue.
+Subject says nothing about cause, and the intake tag is only a browser guess.
+</Callout>
+
+## What is in it
+
+<CauseTable ticket={4471} />
+
+The export has 427 rows. 15 are repeats of the same report id, so the count is 412.
+
+## The two problems
+
+1. **Parser reads dates month first: 379 reports** at 11 day-first tenants, April to October.
+   Ticket: [issue 1](https://github.com/ArtiomKuzmenok/megadev-training/issues/1).
+   Five of them (R-41202, R-41209, R-41236, R-41344, R-41620) read as one-day moves. The kb counts
+   them where they are filed; they may be a separate timezone problem, to check after the fix.
+2. **booking-v3 form hint says MM/DD/YYYY: 33 reports** from `form` at copper.studio,
+   alder.physio and pale.harbour. People type month first because the form tells them to.
+   Ticket: [issue 2](https://github.com/ArtiomKuzmenok/megadev-training/issues/2).
+
+## Lessons
+
+- Count by cause, not by subject. 15 of the 33 hint reports were tagged `parser` at intake.
+- A ticket marked known is a claim. Re-read it against the data before you rely on it.
+
+<RenderStamp {signature} />
