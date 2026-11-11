@@ -4,14 +4,14 @@ title: '#4471 · two problems, not one'
 owner: ArtiomKuzmenok
 status: known
 reviewed: 2026-11-11
-signature: ArtiomKuzmenok
+signature: v1.eyJzdWIiOiIzNTY1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0MTE3OTgsImV4cCI6MTc5NDQ5ODE5OH0.ZfA4hYLI7oy262jXwsfF8HYMPgnxk5ZgDe1BtCRAdMM
 ---
 
 <script>
   import CauseTable from '#lib/kb/CauseTable.svelte';
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
-  const signature = 'ArtiomKuzmenok';
+  const signature = 'v1.eyJzdWIiOiIzNTY1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0MTE3OTgsImV4cCI6MTc5NDQ5ODE5OH0.ZfA4hYLI7oy262jXwsfF8HYMPgnxk5ZgDe1BtCRAdMM';
 </script>
 
 [#4471](/kb/incidents/4471) merged 412 reports about wrong dates into one issue. Read by cause, they
